@@ -1,19 +1,19 @@
-const articlesSection = document.querySelector('.writing')
+var i = 0;
+var j = 0;
+const head1 = 'Hi, I am a web developer.';
+const head2 = 'I like writing code in Python and JavaScript.';
+const speed = 50;
 
-axios.get('https://dev.to/api/articles?username=aspittel').then((articles) => {
-  articles.data
-    .sort((a, b) => a.positive_reactions_count - b.positive_reactions_count)
-    .slice(20, 30)
-    .reverse()
-    .forEach((article) => {
-      const link = document.createElement('a')
-      link.setAttribute('href', article.url)
-      link.textContent = article.title
-      articlesSection.appendChild(link)
-    })
-  const link = document.createElement('a')
-  link.setAttribute('href', 'https://dev.to/aspittel')
-  link.textContent = 'View All'
-  link.classList.add('more-link')
-  articlesSection.appendChild(link)
-})
+function typeWriter() {
+  if (i < head1.length) {
+    document.getElementById("head-1").innerHTML += head1.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+  else if(j < head2.length) {
+    document.getElementById("head-2").innerHTML += head2.charAt(j);
+    j++;
+    setTimeout(typeWriter, speed);
+  }
+}
+window.onload = typeWriter;
