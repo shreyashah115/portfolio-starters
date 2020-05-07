@@ -1,6 +1,6 @@
 var i = 0;
 var j = 0;
-const head1 = 'Hi, I am a web developer.';
+const head1 = 'Hi, I\'m a web developer.';
 const head2 = 'I like writing code in Python and JavaScript.';
 const speed = 50;
 
